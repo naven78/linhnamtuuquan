@@ -1,0 +1,47 @@
+/* Custom styles to replace Bootstrap */
+body {
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+/* Header styles */
+.navbar-finalstyle {
+    background-color: #f8f9fa; /* Example background color */
+    padding: 10px 20px;
+}
+
+.container-top {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    padding: 15px;
+}
+
+/* Button styles */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: white;
+}
+
+/* Add more custom styles as needed */
