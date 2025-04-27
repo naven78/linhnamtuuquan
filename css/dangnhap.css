@@ -1,0 +1,200 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/images/khonggianquan.png);
+    color: #333;
+  }
+  
+  .top-banner {
+    background: #d2b48c; /* Màu be cổ điển */
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    color: #5b4636;
+    letter-spacing: 1px;
+  }
+  
+  .hold-time {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .container {
+    padding: 30px 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff8f0; /* nền trắng kem */
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  h2 {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #5b4636;
+    text-align: center;
+    font-family: 'Playfair Display', serif; /* Chữ cổ điển pha hiện đại */
+  }
+  
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  
+  .form-inputs input {
+    padding: 12px 15px;
+    border: 1px solid #c9b79c;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box; /* Quan trọng để input tính luôn padding */
+    transition: border-color 0.3s;
+  }
+  
+  .form-inputs input:focus {
+    border-color: #a68d6d;
+    outline: none;
+  }
+  
+  .summary-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0px 2px 15px rgba(0,0,0,0.05);
+  }
+  
+  .summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .summary-item i {
+    margin-right: 12px;
+    color: #8b6f47;
+    font-size: 20px;
+    min-width: 25px;
+  }
+  
+  .summary-item span {
+    flex: 1;
+    text-align: left;
+    color: #5b4636;
+    font-weight: 500;
+  }
+  
+  .add-btn, .confirm-btn {
+    background: none;
+    border: 1px solid #8b6f47;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #8b6f47;
+    transition: all 0.3s ease;
+  }
+  
+  .add-btn:hover, .confirm-btn:hover {
+    background: #8b6f47;
+    color: #fff;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff8f0;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .modal-header {
+    background: #d2b48c;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #5b4636;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .modal-close {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .diet-options, .occasion-options {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .diet-options label, .occasion-options label {
+    background: #d2b48c;
+    padding: 8px 14px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .diet-options input[type="checkbox"],
+  .occasion-options input[type="checkbox"] {
+    accent-color: #8b6f47;
+  }
+  .thankyou-container {
+    background: rgba(255, 255, 255, 0.9); 
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .thank-you-banner p {
+    font-size: 16px;
+    color: #6b4c3b;
+    margin-bottom: 10px;
+  }
+  
+  .thank-you-banner h1 {
+    font-size: 26px;
+    color: #4b3828;
+    margin-bottom: 30px;
+  }
+  
+  .confirmation-details p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  .booking-info p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #5b4636;
+  }
+  

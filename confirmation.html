@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đặt bàn - Lĩnh Nam Tửu Quán</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="css/dangnhap.css">
+</head>
+
+<body>
+
+  <div class="top-banner">
+    <div id="topSummary"></div>
+    <div id="countdownText"></div>
+  </div>
+  
+  <div class="container">
+    <h2>Your Information</h2>
+    <div class="form-inputs">
+      <input type="text" id="firstName" placeholder="First Name *">
+      <input type="text" id="lastName" placeholder="Last Name *">
+      <input type="email" id="email" placeholder="Email Address *">
+      <input type="text" id="phone" placeholder="Phone Number *">
+    </div>
+  
+    <h2>Thông tin đặt bàn</h2>
+    <div class="summary-box">
+      <div class="summary-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span><b>Lĩnh Nam Tửu Quán - Cơ sở 1: 235 Hoàng Quốc Việt, Hà Nội</b></span>
+      </div>
+  
+      <div class="summary-item">
+        <i class="fas fa-clock"></i>
+        <span id="summaryDateTime"></span>
+      </div>
+  
+      <div class="summary-item">
+        <i class="fas fa-user-friends"></i>
+        <span id="summaryGuests"></span>
+      </div>
+  
+      <div class="summary-item">
+        <i class="fas fa-utensils"></i>
+        <span>Yêu cầu ăn kiêng</span>
+        <button class="add-btn" id="openDiet">+ Thêm</button>
+      </div>
+  
+      <div class="summary-item">
+        <i class="fas fa-gift"></i>
+        <span>Dịp đặc biệt</span>
+        <button class="add-btn" id="openOccasion">+ Thêm</button>
+      </div>
+  
+      <div class="summary-item">
+        <i class="fas fa-pen"></i>
+        <span>Ghi chú/ Mã ưu đãi</span>
+      </div>
+  
+      <!-- Đặt nút xác nhận trong summary-box luôn -->
+      <div class="summary-item">
+        <i class="fas fa-check-circle"></i>
+        <span>Xác nhận đặt bàn</span>
+        <button class="confirm-btn" id="confirmBooking">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+<div id="dietModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-title">Yêu cầu ăn kiêng</span>
+      <span id="closeDiet" class="modal-close">✖</span>
+    </div>
+    <div class="diet-options">
+      <label><input type="checkbox" value="Không sữa"> Không sữa</label>
+      <label><input type="checkbox" value="Không gluten"> Không gluten</label>
+      <label><input type="checkbox" value="Hải sản"> Hải sản</label>
+      <label><input type="checkbox" value="Ăn chay"> Ăn chay</label>
+      <label><input type="checkbox" value="Thuần chay"> Thuần chay</label>
+      <label><input type="checkbox" value="Dị ứng hạt"> Dị ứng hạt</label>
+      <label><input type="checkbox" value="Dị ứng động vật có vỏ"> Dị ứng động vật có vỏ</label>
+
+    </div>
+  </div>
+</div>
+<div id="occasionModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-title">Dịp đặc biệt</span>
+      <span id="closeOccasion" class="modal-close">✖</span>
+    </div>
+    <div class="occasion-options">
+      <label><input type="checkbox" value="Kỷ niệm ngày cưới"> Kỷ niệm ngày cưới</label>
+      <label><input type="checkbox" value="Sinh nhật"> Sinh nhật</label>
+      <label><input type="checkbox" value="Lễ đính hôn"> Lễ đính hôn</label>
+      <label><input type="checkbox" value="Đám cưới"> Đám cưới</label>
+      <label><input type="checkbox" value="Họp mặt công việc"> Họp mặt công việc</label>
+      <label><input type="checkbox" value="Sự kiện công ty"> Sự kiện công ty</label>
+      <label><input type="checkbox" value="Tốt nghiệp"> Tốt nghiệp</label>
+    </div>
+  </div>
+</div>
+
+<div id="thankYouPage" style="display:none;">
+  <div class="thankyou-container">
+    <div class="thank-you-banner">
+      <p>Xin cảm ơn quý khách.</p>
+      <h1>Chúng tôi rất hân hạnh được chào đón quý khách.</h1>
+    </div>
+
+    <div class="confirmation-details">
+      <p id="confirmEmail"></p>
+
+      <div class="booking-info">
+        <p><b>Lĩnh Nam Tửu Quán</b></p>
+        <p id="confirmDateTime"></p>
+        <p id="confirmGuests"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+// --- Lấy dữ liệu từ đặt bàn ---
+const params = new URLSearchParams(window.location.search);
+const date = params.get('date');
+const guests = params.get('guests');
+const timeBooking = params.get('time');
+
+// --- Hiển thị thông tin tóm tắt ---
+document.getElementById('topSummary').textContent = `${date} · ${guests} khách · ${timeBooking}`;
+document.getElementById('summaryDateTime').textContent = `${date} · ${timeBooking}`;
+document.getElementById('summaryGuests').textContent = `${guests} khách`;
+
+// --- Đếm ngược thời gian giữ bàn ---
+let time = 300;
+function startCountdown() {
+  const m = Math.floor(time / 60);
+  const s = time % 60;
+  const countdownText = time >= 0 
+    ? `Chúng tôi đang giữ bàn này trong ${m}:${s.toString().padStart(2, '0')} phút`
+    : "Bàn của quý khách hiện không còn được giữ, quý khách vẫn có thể thử đặt lại.";
+  
+  document.getElementById('countdownText').textContent = countdownText;
+  
+  if (time >= 0) {
+    time--;
+    setTimeout(startCountdown, 1000);
+  }
+}
+startCountdown();
+
+
+const modals = [
+  { openBtn: 'openDiet', modal: 'dietModal', closeBtn: 'closeDiet' },
+  { openBtn: 'openOccasion', modal: 'occasionModal', closeBtn: 'closeOccasion' }
+];
+
+modals.forEach(({ openBtn, modal, closeBtn }) => {
+  const modalEl = document.getElementById(modal);
+  document.getElementById(openBtn).onclick = () => modalEl.style.display = 'flex';
+  document.getElementById(closeBtn).onclick = () => modalEl.style.display = 'none';
+  window.addEventListener('click', (e) => {
+    if (e.target === modalEl) modalEl.style.display = 'none';
+  });
+});
+
+document.getElementById('confirmBooking').onclick = function() {
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  if (!firstName || !lastName || !email || !phone) {
+    alert('Vui lòng nhập đầy đủ thông tin trước khi xác nhận!');
+    return;
+  }
+
+  document.querySelector('.container').style.display = 'none';
+  document.querySelector('.top-banner').style.display = 'none';
+  document.getElementById('thankYouPage').style.display = 'block';
+
+  document.getElementById('confirmEmail').textContent = `Thông tin xác nhận đã được gửi đến ${email}`;
+  document.getElementById('confirmDateTime').textContent = `${date} · ${timeBooking}`;
+  document.getElementById('confirmGuests').textContent = `${guests} khách`;
+};
+
+
+
+</script>
+
+</body>
+</html>
