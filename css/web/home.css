@@ -56,7 +56,7 @@
 
 /* Box order */
 .box-order {
-    background: url(/images/bg-order.jpg?abc302b7ec4ae570eeeccafb71aa8a27);
+    background: url(/images/bg-order.jpg);
     background-size: cover;
     padding: 120px 0;
 }
@@ -177,7 +177,7 @@
 
 /* News section */
 .box-new {
-    background: url(/images/bg_news.jpg?a2b11265da113077b2d425d4c8132925);
+    background: url(/images/bg_news.jpg);
     background-size: cover;
     padding: 120px 0;
 }
